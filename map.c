@@ -2234,7 +2234,8 @@ The same but with integer keys:
 =head1 CAVEAT
 
 A C<null> pointer can't be a key. Neither can zero when using integers as
-keys.
+keys. Also, zero cannot be a value if using ints as values; map_get for associated
+key would return NULL as value.
 
 If you use an internal iterator in a loop that terminates before the end of
 the map, and fail to call I<map_break(3)>, the internal iterator will leak.
